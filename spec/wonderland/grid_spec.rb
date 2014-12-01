@@ -4,17 +4,9 @@ require 'wonderland/grid'
 describe Wonderland::Grid do
   subject { Virtus::Attribute.build(described_class).coerce(value_to_coerce) }
 
-  shared_examples_for 'a successful coercer' do |val, expected, same_as = nil|
-    if same_as
-      it { is_expected.to eq same_as }
-    end
-  end
-
-  it_behaves_like 'a successful coercer', nil, Wonderland::Grids::Base
-
-  context 'given a nil' do
-    let(:value_to_coerce) { nil }
-    it { is_expected.to be_a Wonderland::Grids::Base }
+  shared_examples_for 'a successful coercer' do |val, grid_type|
+    let(:value_to_coerce) { val }
+    it { is_expected.to be_a grid_type }
   end
 
   context 'given a kind of Wonderland::Grids::Base' do
@@ -22,8 +14,7 @@ describe Wonderland::Grid do
     it { is_expected.to eq value_to_coerce }
   end
 
-  context 'given a value of :base' do
-    let(:value_to_coerce) { :base }
-    it { is_expected.to be_a Wonderland::Grids::Base }
-  end
+  it_behaves_like 'a successful coercer', nil, Wonderland::Grids::Base
+  it_behaves_like 'a successful coercer', :base, Wonderland::Grids::Base
+  it_behaves_like 'a successful coercer', :directed_graph, Wonderland::Grids::DirectedGraph
 end

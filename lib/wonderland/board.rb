@@ -14,5 +14,9 @@ module Wonderland
     # @!attribute [rw] grid
     #   @return [Grid]
     attribute :grid, Grid
+
+    def setup_pieces
+      spaces.each { |space| space.grid = grid }
+    end
   end
 end
