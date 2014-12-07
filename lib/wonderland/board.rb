@@ -1,22 +1,22 @@
 require 'virtus'
 
 require 'wonderland/grid'
-require 'wonderland/space'
 
 module Wonderland
   class Board
     include Virtus.model
 
-    # @!attribute [rw] spaces
-    #   @return [Array<Space>]
-    attribute :spaces, Array[Space], default: ->(*a) { [] }
+    attribute :spaces, Array, default: []
+    attribute :grid, Grid, default: ->(*a) { Grid.new }
 
-    # @!attribute [rw] grid
-    #   @return [Grid]
-    attribute :grid, Grid
+    def move_piece(component, from:, to:)
+      return false unless spaces.include?(to) && spaces.include?(from)
+      return false unless from.contains?(component)
+      from.remove_piece(component) && to.add_piece(component)
+    end
 
-    def setup_pieces
-      spaces.each { |space| space.grid = grid }
+    def can_move_from?(from, to: to)
+      grid.can_move?(from, to: to)
     end
   end
 end
