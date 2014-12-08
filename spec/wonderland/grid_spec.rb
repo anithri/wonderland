@@ -1,7 +1,7 @@
 require 'rspec'
 require 'wonderland/grid'
 
-describe Wonderland::Grid, focus: true do
+describe Wonderland::Grid do
   subject { described_class.new }
   it { is_expected.to be_a described_class }
 
@@ -16,11 +16,11 @@ describe Wonderland::Grid, focus: true do
     end
 
     it { expect(subject.neighbors).to eq({ robin: [:batman], batman: [:robin, :batgirl], batgirl: [:batman] }) }
-    it { expect(subject.can_move_from?(:robin, to: :batman)).to be_truthy }
-    it { expect(subject.can_move_from?(:batman, to: :robin)).to be_truthy }
-    it { expect(subject.can_move_from?(:batman, to: :batgirl)).to be_truthy }
-    it { expect(subject.can_move_from?(:batgirl, to: :batman)).to be_truthy }
-    it { expect(subject.can_move_from?(:robin, to: :batgirl)).to be_falsey }
+    it { expect(subject.can_move?(:robin, to: :batman)).to be_truthy }
+    it { expect(subject.can_move?(:batman, to: :robin)).to be_truthy }
+    it { expect(subject.can_move?(:batman, to: :batgirl)).to be_truthy }
+    it { expect(subject.can_move?(:batgirl, to: :batman)).to be_truthy }
+    it { expect(subject.can_move?(:robin, to: :batgirl)).to be_falsey }
 
     context 'when reverse is false' do
       subject do
@@ -30,8 +30,8 @@ describe Wonderland::Grid, focus: true do
       end
 
       it { expect(subject.neighbors).to eq({ robin: [:batman] }) }
-      it { expect(subject.can_move_from?(:robin, to: :batman)).to be_truthy }
-      it { expect(subject.can_move_from?(:batman, to: :robin)).to be_falsey }
+      it { expect(subject.can_move?(:robin, to: :batman)).to be_truthy }
+      it { expect(subject.can_move?(:batman, to: :robin)).to be_falsey }
     end
   end
 end

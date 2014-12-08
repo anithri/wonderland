@@ -1,0 +1,71 @@
+---
+spaces:
+  - :dockyard
+  - :old_gotham
+  - :wildermann
+  - :grant
+  - :churchfield
+  - :robinson_park
+  - :south_street
+  - :parkside
+  - :goldberg
+  - :tower
+  - :dockside
+  - :old_port
+connections:
+  :dockyard:
+    - :old_gotham
+    - :wildermann
+  :old_gotham:
+    - :dockyard
+    - :south_street
+  :wildermann:
+    - :dockyard
+    - :south_street
+    - :robinson_park
+  :grant:
+    - :wildermann
+    - :parkside
+    - :dockside
+    - :tower
+  :churchfield:
+    - :dockside
+    - :tower
+  :robinson_park:
+    - :south_street
+    - :wildermann
+    - :parkside
+  :south_street:
+    - :old_gotham
+    - :robinson_park
+    - :parkside
+    - :goldberg
+  :parkside:
+    - :south_street
+    - :robinson_park
+    - :wildermann
+    - :grant
+    - :tower
+    - :goldberg
+    - :old_port
+  :goldberg:
+    - :south_street
+    - :parkside
+    - :tower
+    - :old_port
+  :tower:
+    - :grant
+    - :churchfield
+    - :dockside
+    - :old_port
+    - :goldberg
+    - :parkside
+  :old_port:
+    - :goldberg
+    - :parkside
+    - :tower
+    - :dockside
+    - :old_port
+  :dockside:
+    - :old_port
+    - :tower
