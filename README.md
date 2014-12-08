@@ -1,6 +1,9 @@
 # Wonderland
+[![Build Status](https://travis-ci.org/anithri/wonderland.svg?branch=master)](https://travis-ci.org/anithri/wonderland)
+[![PullReview stats](https://www.pullreview.com/github/anithri/wonderland/badges/master.svg?)](https://www.pullreview.com/github/anithri/wonderland/reviews/master)
+[![Dependency Status](https://gemnasium.com/anithri/wonderland.svg)](https://gemnasium.com/anithri/wonderland)
 
-TODO: Write a gem description
+A Game Board object and supporting pieces: spaces and grids
 
 ## Installation
 
