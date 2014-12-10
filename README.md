@@ -1,7 +1,8 @@
-# Wonderland
+# Wonderland [![Gem Version](https://badge.fury.io/rb/wonderland.svg)](http://badge.fury.io/rb/wonderland)
 [![Build Status](https://travis-ci.org/anithri/wonderland.svg?branch=master)](https://travis-ci.org/anithri/wonderland)
 [![PullReview stats](https://www.pullreview.com/github/anithri/wonderland/badges/master.svg?)](https://www.pullreview.com/github/anithri/wonderland/reviews/master)
 [![Dependency Status](https://gemnasium.com/anithri/wonderland.svg)](https://gemnasium.com/anithri/wonderland)
+[![Documentat Status[(http://inch-ci.org/github/anithri/wonderland.svg?branch=master)](http://inch-ci.org/github/anithri/wonderland)
 
 A Game Board object and supporting pieces: spaces and grids
 
